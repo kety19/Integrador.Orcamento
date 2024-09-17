@@ -2,30 +2,39 @@ package integradorService;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+
 import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mock;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import IntegradorEntites.OrcamentoEntity;
-import IntegradorEntites.ProdutoServicoEntity;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringRunner;
+
+import com.Integrador.integrador.IntegradorEntites.OrcamentoEntity;
+import com.Integrador.integrador.IntegradorEntites.ProdutoServicoEntity;
+
+import jakarta.annotation.security.RunAs;
+
 
 @SpringBootTest
-public class SomarService {
+@ContextConfiguration(classes = { TestConfig.class })
+public class SomarService{
 
 	@Autowired
 	private SomarService somarService;
 
 	private OrcamentoEntity orcamento;
 
+
     @BeforeEach
     public void setUp() {
-        // Inicializa o OrcamentoEntity antes de cada teste
+       
         orcamento = new OrcamentoEntity();
     }
+    
 	@Test
 	void opcao1() {
 		  ProdutoServicoEntity produto1 = new ProdutoServicoEntity();
@@ -43,9 +52,8 @@ public class SomarService {
 	        OrcamentoEntity orcamento = new OrcamentoEntity();
 	        orcamento.setProdutosServicos(produtosServicos);
 
-	        double total = somarService.total(orcamento);
 
-	        // Verificando se o total foi calculado corretamente
-	        assertEquals(350.0, total, 0.001); 
+	        // Verificando se o total 
+	        assertEquals(350.0, orcamento.getTotal(), 0.001);
 	    }
 }

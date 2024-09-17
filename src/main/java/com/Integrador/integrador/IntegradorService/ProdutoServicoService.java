@@ -1,11 +1,12 @@
-package IntegradorService;
+package com.Integrador.integrador.IntegradorService;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import IntegradorEntites.ProdutoServicoEntity;
 import org.springframework.stereotype.Service;
-import IntegradorRepository.ProdutoServicoRepository;
+
+import com.Integrador.integrador.IntegradorEntites.ProdutoServicoEntity;
+import com.Integrador.integrador.IntegradorRepository.ProdutoServicoRepository;
 
 @Service
 public class ProdutoServicoService {

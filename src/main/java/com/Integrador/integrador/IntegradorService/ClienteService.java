@@ -1,11 +1,11 @@
-package IntegradorService;
-
+package com.Integrador.integrador.IntegradorService;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import IntegradorEntites.ClienteEntity;
 import org.springframework.stereotype.Service;
-import IntegradorRepository.ClienteRepository;
+
+import com.Integrador.integrador.IntegradorEntites.ClienteEntity;
+import com.Integrador.integrador.IntegradorRepository.ClienteRepository;
 
 @Service
 public class ClienteService {

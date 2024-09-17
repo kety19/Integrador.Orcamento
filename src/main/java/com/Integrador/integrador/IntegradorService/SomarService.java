@@ -1,8 +1,11 @@
-package IntegradorService;
+package com.Integrador.integrador.IntegradorService;
+
+import org.springframework.context.annotation.Configuration;
 
 import org.springframework.stereotype.Service;
-import IntegradorEntites.OrcamentoEntity;
-import IntegradorEntites.ProdutoServicoEntity;
+import com.Integrador.integrador.IntegradorEntites.OrcamentoEntity;
+import com.Integrador.integrador.IntegradorEntites.ProdutoServicoEntity;
+
 
 @Service
 public class SomarService {

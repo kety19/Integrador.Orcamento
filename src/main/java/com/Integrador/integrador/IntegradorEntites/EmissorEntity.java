@@ -1,4 +1,4 @@
-package IntegradorEntites;
+package com.Integrador.integrador.IntegradorEntites;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -21,4 +21,5 @@ public class EmissorEntity {
 	    private String logoUrl;
 	    
 
+	    
 }

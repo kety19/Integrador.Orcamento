@@ -1,4 +1,4 @@
-package IntegradorController;
+package com.Integrador.integrador.IntegradorController;
 
 import java.util.List;
 
@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-import IntegradorEntites.ProdutoServicoEntity;
-import IntegradorRepository.ProdutoServicoRepository;
+import com.Integrador.integrador.IntegradorEntites.ProdutoServicoEntity;
+import com.Integrador.integrador.IntegradorRepository.ProdutoServicoRepository;
 
 public class ProjetoServicoController {
 

@@ -1,10 +1,12 @@
-package IntegradorService;
+package com.Integrador.integrador.IntegradorService;
 
 import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import IntegradorEntites.EmissorEntity;
 import org.springframework.stereotype.Service;
-import IntegradorRepository.EmissorRepository;
+
+import com.Integrador.integrador.IntegradorEntites.EmissorEntity;
+import com.Integrador.integrador.IntegradorRepository.EmissorRepository;
 
 @Service
 public class EmissorService {
