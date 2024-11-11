@@ -7,4 +7,5 @@ import com.Integrador.integrador.IntegradorEntites.EmissorEntity;
 
 @Repository
 public interface EmissorRepository extends JpaRepository<EmissorEntity, Long> {
+   
 }

@@ -19,6 +19,24 @@ public class EmissorService {
 		return emissorRepository.save(emissor);
 	}
 
+    public EmissorEntity criarEmissor(EmissorEntity emissor) {
+        // Validações
+        if (emissor.getNome() == null || emissor.getNome().isEmpty()) {
+            throw new IllegalArgumentException("Nome é obrigatório");
+        }
+        if (!isCnpjValido(emissor.getCnpj())) {
+            throw new IllegalArgumentException("CNPJ inválido");
+        }
+
+        // Salva o emissor no repositório
+        return emissorRepository.save(emissor);
+    }
+
+    private boolean isCnpjValido(String cnpj) {
+        // Lógica para validar o CNPJ (implementar conforme necessário)
+        return cnpj != null && cnpj.matches("\\d{14}"); // Exemplo de validação simples
+    }
+
 	public List<EmissorEntity> listarTodosEmissores() {
 		return emissorRepository.findAll();
 	}
