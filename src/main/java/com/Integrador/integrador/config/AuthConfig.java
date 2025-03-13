@@ -1,4 +1,4 @@
-package suporte.sup.Config;
+package com.Integrador.integrador.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
@@ -78,3 +78,4 @@ public class AuthConfig {
 //    }
 
 }
+

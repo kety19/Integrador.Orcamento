@@ -1,22 +1,26 @@
 package com.Integrador.integrador.IntegradorController;
 
-import javax.naming.AuthenticationException;
-
+import org.springframework.security.access.prepost.PreAuthorize;
+import com.Integrador.integrador.IntegradorService.ClienteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.security.core.AuthenticationException;
+import org.springframework.web.bind.annotation.*;
 
-public class Login {
+
+	@RestController
+	@RequestMapping("/api")
+	@CrossOrigin("*")
+	public class Login {
 	  @Autowired
-	    private UsuarioService pessoaService;
+	    private ClienteService clienteService;
 
 	    @PreAuthorize("hasRole('ADMIN') or hasRole('USUARIO')")
 	    @PostMapping("/login")
 	    public ResponseEntity<String> logar(@RequestBody LoginRequest login) {
 	        try {
-	            return ResponseEntity.ok(pessoaService.logar(login));
+	            return ResponseEntity.ok(clienteService.logar(login));
 	        }catch(AuthenticationException ex) {
 	            System.out.println(ex.getMessage());
 	            return new ResponseEntity<>(null, HttpStatus.UNAUTHORIZED);
@@ -25,3 +29,4 @@ public class Login {
 	            return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
 	        }
 }
+	 }
