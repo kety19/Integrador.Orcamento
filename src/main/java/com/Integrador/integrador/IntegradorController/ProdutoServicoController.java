@@ -19,9 +19,12 @@ import org.springframework.web.bind.annotation.RestController;
 import com.Integrador.integrador.IntegradorEntites.ProdutoServicoEntity;
 import com.Integrador.integrador.IntegradorService.ProdutoServicoService;
 
+import jakarta.annotation.security.PermitAll;
+
 @RestController
 @RequestMapping("/produtos-servicos")
-@CrossOrigin("*")
+@CrossOrigin(origins = "http://localhost:4200", allowCredentials = "true")
+@PermitAll
 public class ProdutoServicoController {
 
 	@Autowired
@@ -32,7 +35,7 @@ public class ProdutoServicoController {
 		ProdutoServicoEntity produtoCriado = produtoServicoService.criarProdutoServico(novoProduto);
 		return ResponseEntity.status(HttpStatus.CREATED).body(produtoCriado);
 	}
-
+	@CrossOrigin(origins = "http://localhost:4200", allowCredentials = "true")
 	@GetMapping("/listarProdutos")
 	public ResponseEntity<List<ProdutoServicoEntity>> listarProdutosServicos() {
 		List<ProdutoServicoEntity> produtosServicos = produtoServicoService.listarTodos();
