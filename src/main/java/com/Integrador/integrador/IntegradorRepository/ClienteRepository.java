@@ -10,7 +10,7 @@ import com.Integrador.integrador.IntegradorEntites.ClienteEntity;
 @Repository
 public interface ClienteRepository extends JpaRepository<ClienteEntity, Long> {
 	
-	@Query(value = "select * from usuario where nome = ?1", nativeQuery = true)
+	@Query(value = "select * from cliente_entity where nome = ?1", nativeQuery = true)
     Optional<ClienteEntity> findByNomr(String login);
 	
 }

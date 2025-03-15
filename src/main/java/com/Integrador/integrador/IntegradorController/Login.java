@@ -10,15 +10,17 @@ import org.springframework.web.bind.annotation.*;
 
 
 	@RestController
-	@RequestMapping("/api")
+	@RequestMapping("/auth")
 	@CrossOrigin("*")
 	public class Login {
 	  @Autowired
 	    private ClienteService clienteService;
 
-	    @PreAuthorize("hasRole('ADMIN') or hasRole('USUARIO')")
+	    //@PreAuthorize("hasRole('ADMIN') or hasRole('USUARIO')")
 	    @PostMapping("/login")
 	    public ResponseEntity<String> logar(@RequestBody LoginRequest login) {
+
+			System.out.println("teste");
 	        try {
 	            return ResponseEntity.ok(clienteService.logar(login));
 	        }catch(AuthenticationException ex) {
